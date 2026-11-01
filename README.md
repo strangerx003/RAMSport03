@@ -136,3 +136,32 @@ data/                created at runtime, git-ignored (database + WAL files)
 - No hard delete anywhere in the UI. Projects archive instead, so the audit trail stays intact.
 - Accounts are created by an admin invitation only; there is no self-service signup or email
   delivery in this build.
+
+---
+
+## Deployment
+
+### Prerequisite
+
+Node.js `>=22.5` is required. The app uses the built-in `node:sqlite` module, so no native build
+step is needed.
+
+### GitHub
+
+The repository is hosted on GitHub:
+https://github.com/strangerx003/RAMSport03
+
+### Vercel
+
+1. Install the [Vercel CLI](https://vercel.com/cli) (`npm i -g vercel`) or use the [Vercel web dashboard](https://vercel.com).
+2. In the project directory, run `vercel` and follow the prompts.
+   - Framework Preset: **Next.js**
+   - Build Command: `next build`
+   - Output Directory: `.next`
+   - Development Command: `next dev`
+3. Add the environment variable `RELIA_DATA_DIR` set to `/tmp/relia-data` if you want the SQLite
+   database stored in the writable `/tmp` directory (Vercel's filesystem is read-only on the edge).
+4. Deploy. The app will be live at `https://<project-name>.vercel.app`.
+
+> The `postbuild` script (`prepare-standalone.cjs`) is only used for self-hosted standalone servers
+> (`npm run start`). Vercel runs its own Next.js build, so that script is skipped in production.
