@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#141814"/>
+  <rect x="2" y="2" width="60" height="60" rx="10" fill="none" stroke="#2f362e" stroke-width="2"/>
+  <path d="M18 47V17h13.5c5.5 0 9 3.2 9 8.2 0 4-2.2 6.7-6 7.7l7 14.1h-7.6l-6.2-12.9H25V41a6 6 0 0 1 0 6z" fill="none"/>
+  <text x="32" y="34" font-family="Consolas, 'JetBrains Mono', monospace" font-size="30" font-weight="700" fill="#f2a33c" text-anchor="middle" dominant-baseline="central">R</text>
+</svg>

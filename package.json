@@ -1,0 +1,29 @@
+{
+  "name": "rams-port-03",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RAMSport03 — reliability, availability, maintainability and safety analysis platform",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('.next', {recursive:true, force:true});\"",
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "postbuild": "node scripts/prepare-standalone.cjs",
+    "start": "node scripts/start.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "xlsx": "0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}

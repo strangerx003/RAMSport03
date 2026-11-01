@@ -1,0 +1,388 @@
+/* =====================================================================
+   Data Register — spreadsheet surface on the console-v2 palette.
+   ===================================================================== */
+
+.reg {
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.reg-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 9px 11px;
+  background: linear-gradient(180deg, #232a23, #1b211b);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.reg-search {
+  flex: 1;
+  min-width: 190px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #121612;
+  color: var(--muted);
+}
+.reg-search:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(242, 163, 60, 0.13);
+}
+.reg-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+}
+.reg-search input::placeholder {
+  color: #6d7769;
+}
+
+.reg-state {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: var(--radius-lamp);
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+  background: #161a16;
+}
+.reg-state.dirty {
+  color: var(--warn-ink);
+  border-color: #574614;
+  background: var(--warn-soft);
+}
+.reg-state.clean {
+  color: var(--ok-ink);
+  border-color: #24503a;
+  background: var(--ok-soft);
+}
+
+.reg-notice {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+.reg-notice.success {
+  background: var(--ok-soft);
+  color: var(--ok-ink);
+  border-left: 3px solid var(--ok);
+}
+.reg-notice.error {
+  background: var(--danger-soft);
+  color: var(--danger-ink);
+  border-left: 3px solid var(--danger-hard);
+}
+.reg-notice button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.reg-scroll {
+  max-height: calc(100vh - 330px);
+  min-height: 280px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3a4437 transparent;
+}
+.reg-scroll::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+.reg-scroll::-webkit-scrollbar-thumb {
+  background: #3a4437;
+  border-radius: 8px;
+}
+
+.reg-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 11.5px;
+}
+.reg-table th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  text-align: left;
+  padding: 7px 8px 6px;
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--line-strong);
+  border-top: 2px solid var(--line-strong);
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.reg-table th.num,
+.reg-table td.num {
+  text-align: right;
+}
+.reg-table th.computed::after {
+  content: "ƒ";
+  margin-left: 4px;
+  color: #c9b07b;
+  font-size: 9px;
+}
+.reg-table td {
+  padding: 2px 4px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.reg-table tbody tr:hover {
+  background: #1e241e;
+}
+.reg-table tbody tr.selected {
+  background: var(--accent-soft);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.reg-table tbody tr.is-new td {
+  background: rgba(99, 217, 155, 0.035);
+}
+.reg-table tbody tr.is-new td:first-child {
+  box-shadow: inset 3px 0 0 var(--ok);
+}
+.reg-table td.computed {
+  padding: 7px 8px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.012);
+}
+.reg-rownum {
+  width: 40px;
+  text-align: right !important;
+  padding-right: 8px !important;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: #7d8878;
+  user-select: none;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--panel);
+}
+.reg-table thead .reg-rownum {
+  z-index: 4;
+  background: var(--panel-2);
+}
+.reg-table tbody tr.selected .reg-rownum {
+  background: var(--accent-soft);
+}
+.reg-table tbody tr.is-new .reg-rownum {
+  background: #18211a;
+}
+
+.reg-input,
+.reg-select {
+  width: 100%;
+  min-width: 72px;
+  height: 28px;
+  padding: 0 7px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  outline: 0;
+}
+.reg-input.mono {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
+.reg-input.num {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+}
+.reg-input:hover:not(:disabled),
+.reg-select:hover:not(:disabled) {
+  border-color: var(--line);
+  background: #121612;
+}
+.reg-input:focus,
+.reg-select:focus {
+  border-color: var(--accent);
+  background: #121612;
+  box-shadow: 0 0 0 2px rgba(242, 163, 60, 0.14);
+}
+.reg-input:disabled,
+.reg-select:disabled {
+  color: var(--ink-2);
+  opacity: 0.85;
+  -webkit-text-fill-color: var(--ink-2);
+}
+.reg-select {
+  appearance: none;
+  padding-right: 20px;
+  background-image: linear-gradient(45deg, transparent 50%, #84907c 50%), linear-gradient(135deg, #84907c 50%, transparent 50%);
+  background-position: calc(100% - 11px) 12px, calc(100% - 7px) 12px;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  max-width: 190px;
+}
+.reg-select option {
+  background: var(--panel);
+  color: var(--ink);
+}
+
+.reg-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: var(--radius-lamp);
+  border: 1px solid var(--line-strong);
+  background: #1a1f19;
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.reg-badge.ok {
+  color: var(--ok-ink);
+  border-color: #24503a;
+  background: var(--ok-soft);
+}
+.reg-badge.info {
+  color: #a9cff0;
+  border-color: #2b4557;
+  background: #14202a;
+}
+.reg-badge.warn {
+  color: var(--warn-ink);
+  border-color: #574614;
+  background: var(--warn-soft);
+}
+.reg-badge.danger {
+  color: var(--danger-ink);
+  border-color: #6a2c22;
+  background: var(--danger-soft);
+}
+.reg-badge.neutral {
+  color: var(--muted);
+}
+
+.reg-actions {
+  width: 34px;
+  text-align: center;
+}
+.reg-delete {
+  width: 21px;
+  height: 21px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  color: #8b9486;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+.reg-delete:hover:not(:disabled) {
+  border-color: #6a2c22;
+  background: var(--danger-soft);
+  color: var(--danger-ink);
+}
+.reg-delete:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.reg-empty {
+  padding: 30px 14px !important;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11.5px;
+}
+
+.reg-foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  border-top: 1px solid var(--line-strong);
+  background: #141814;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.reg-foot-note {
+  margin-left: auto;
+  color: #7d8878;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.reg-readonly .reg-toolbar .btn-primary {
+  opacity: 0.45;
+}
+
+@media (max-width: 900px) {
+  .reg-scroll {
+    max-height: none;
+    min-height: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .reg-search {
+    min-width: 150px;
+  }
+  .reg-foot-note {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .reg-toolbar {
+    padding: 8px;
+    gap: 6px;
+  }
+  .reg-search {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+  .reg-table {
+    min-width: 980px;
+  }
+  .reg-table th {
+    padding: 6px 6px 5px;
+  }
+  .reg-foot {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+}

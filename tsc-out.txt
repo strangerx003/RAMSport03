@@ -1,0 +1,66 @@
+﻿app/landing/page.tsx(22,20): error TS1005: '}' expected.
+app/landing/page.tsx(32,11): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(36,25): error TS1351: An identifier or keyword cannot immediately follow a numeric literal.
+app/landing/page.tsx(36,27): error TS1005: ',' expected.
+app/landing/page.tsx(37,13): error TS1005: '}' expected.
+app/landing/page.tsx(37,23): error TS1005: '}' expected.
+app/landing/page.tsx(37,31): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(38,11): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(40,20): error TS1005: '}' expected.
+app/landing/page.tsx(48,11): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(54,45): error TS1005: '>' expected.
+app/landing/page.tsx(54,124): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+app/landing/page.tsx(59,52): error TS1003: Identifier expected.
+app/landing/page.tsx(59,53): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+app/landing/page.tsx(59,54): error TS1002: Unterminated string literal.
+app/landing/page.tsx(116,57): error TS1005: '>' expected.
+app/landing/page.tsx(116,147): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+app/landing/page.tsx(119,125): error TS1003: Identifier expected.
+app/landing/page.tsx(119,126): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+app/landing/page.tsx(119,127): error TS1002: Unterminated string literal.
+app/landing/page.tsx(121,50): error TS1003: Identifier expected.
+app/landing/page.tsx(121,104): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+app/landing/page.tsx(123,50): error TS1003: Identifier expected.
+app/landing/page.tsx(123,89): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+app/landing/page.tsx(123,92): error TS17002: Expected corresponding JSX closing tag for 'section'.
+app/landing/page.tsx(124,17): error TS17002: Expected corresponding JSX closing tag for 'body'.
+app/landing/page.tsx(125,15): error TS17002: Expected corresponding JSX closing tag for 'html'.
+app/landing/page.tsx(126,11): error TS1005: ')' expected.
+app/landing/page.tsx(129,20): error TS1005: ';' expected.
+app/landing/page.tsx(295,11): error TS1128: Declaration or statement expected.
+app/landing/page.tsx(298,20): error TS1005: ';' expected.
+app/landing/page.tsx(321,11): error TS1128: Declaration or statement expected.
+app/landing/page.tsx(323,9): error TS1109: Expression expected.
+app/landing/page.tsx(326,14): error TS1005: ';' expected.
+app/landing/page.tsx(327,11): error TS2657: JSX expressions must have one parent element.
+app/landing/page.tsx(329,9): error TS1128: Declaration or statement expected.
+app/landing/page.tsx(334,10): error TS1109: Expression expected.
+app/landing/page.tsx(335,9): error TS2657: JSX expressions must have one parent element.
+app/landing/page.tsx(342,18): error TS1005: '}' expected.
+app/landing/page.tsx(344,9): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(347,44): error TS1005: '}' expected.
+app/landing/page.tsx(347,52): error TS1005: '}' expected.
+app/landing/page.tsx(347,67): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(347,69): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(348,36): error TS1005: '}' expected.
+app/landing/page.tsx(348,61): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(349,30): error TS1005: '}' expected.
+app/landing/page.tsx(349,55): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(350,37): error TS1005: '}' expected.
+app/landing/page.tsx(350,62): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(351,56): error TS1005: '}' expected.
+app/landing/page.tsx(351,81): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(352,40): error TS1005: '}' expected.
+app/landing/page.tsx(352,65): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(363,13): error TS1005: '}' expected.
+app/landing/page.tsx(364,9): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(367,44): error TS1005: '}' expected.
+app/landing/page.tsx(367,68): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(370,16): error TS1005: '}' expected.
+app/landing/page.tsx(371,27): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+app/landing/page.tsx(372,20): error TS1005: '}' expected.
+app/landing/page.tsx(376,11): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(377,9): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+app/landing/page.tsx(384,7): error TS1128: Declaration or statement expected.
+app/landing/page.tsx(385,5): error TS1109: Expression expected.
+app/landing/page.tsx(386,3): error TS1109: Expression expected.
